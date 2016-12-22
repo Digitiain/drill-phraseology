@@ -24,6 +24,7 @@
                     <!-- Break it down into parts -->
         {% for squad in drill.squads %}
 
+<<<<<<< Updated upstream
                 <div>
                     <p>Continue to look this way for a demonstration of the movement to be carried out on receipt of the word of command {{ squad.command }}.</p>
                     <p>{{ squad.command }}</p>
@@ -51,6 +52,37 @@
                     <p>[On the last practice, the instructor should carry out the same movement as the class in preparation for the next part of the lesson.]</p>
                     <p>Relax and look this way. I left you in THIS position.</p>
                 </div>
+=======
+        <div>
+            <p>Continue to look this way for a demonstration of the movement to be carried out on receipt of the word of command {{ squad.command }}.</p>
+            <p>{{ squad.command }}</p>
+            <p>{{ squad.timings }}</p>
+            <p>IMMEDIATELY, on receipt of the word of command, I {{ squad.immediately }}, and I FROZE in this position!</p>
+            <p>POINTS TO NOTE: My {{ squad.points }}</p>
+            <p>You, the squad, on execution of this movement will call out {{ squad.timings }}. Are there any questions?</p>
+            <p>Adopt the position of {{ squad.position }}</p>
+            <p>{{ squad.command }}</p>
+            <p>As you were!</p>
+            <p>{{ squad.command }}</p>
+            <p>As you were!</p>
+            <p>{{ squad.command }}</p>
+            <p>ENSURE NOW that your {{ squad.points }}</p>
+            <p>As I pass you, break off into pairs and practise, ensuring that one of you calls out the correct word of command.</p>
+            <p>[Inspect the class individually, critiquing and correcting as necessary, and telling them to break off as you pass each pair.]</p>
+            <p>[Once all of the class has broken off to practise, move between pairs (or groups if an uneven number) and critique further.]</p>
+            <p>FALL IN {{ squad.fall_in }}!</p>
+            <p>Adopt the position of {{ squad.position }}</p>
+            <p>{{ squad.command }}</p>
+            <p>As you were!</p>
+            <p>{{ squad.command }}</p>
+            <p>As you were!</p>
+            <p>{{ squad.command }}</p>
+            <p>[On the last practice, the instructor should carry out the same movement as the class in preparation for the next part of the lesson.]</p>
+            <p>Relax and look this way. I left you in THIS position.</p>
+        </div>
+
+{% endfor %}
+>>>>>>> Stashed changes
 
         {% end for %}
 
