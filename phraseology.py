@@ -9,8 +9,7 @@ app.config.from_object(__name__)
 
 @app.route('/')
 def index():
-	json_data = open(os.path.join(static, "data", "right_turn.json"), "r")
-	lessons = json_data
+	lessons = open(os.path.join(static, "data", "right_turn.json"), "r")
     return render_template('index.html',  lessons=lessons)
 
 
