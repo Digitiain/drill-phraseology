@@ -1,0 +1,64 @@
+{% extends 'base.html' %} {% block body %}
+
+
+  <div class="form-group">
+
+    <!-- General information about the lesson -->
+    <label for="lessonTitle">Lesson title:</label>
+    <input type="text" class="form-control" id="lessonTitle" placeholder="Right turn at the halt">
+    <label for="drillType">Type of drill:</label>
+    <select class="form-control" id="drillType">
+      <option value="foot">Foot drill</option>
+      <option value="rifle">Rifle drill</option>
+    </select>
+    <label for="reason">Reason for the movement <br />("The reason this movement is taught is to allow you as an individual or formed body of men to..."):</label>
+    <input type="text" class="form-control" id="reason" placeholder="Move through 90 degrees to the right">
+    <label for="command">Full drill command:</label>
+    <input type="text" class="form-control" id="command" placeholder="Turning at the halt, RIGHT - TURN">
+    <label for="timings">Regimental timings:</label>
+    <input type="text" class="form-control" id="timings" placeholder="ONE - TWO, THREE - ONE">
+
+    <!-- Information about the break-down of the lesson -->
+    <div id="squads">
+      <div id="1">
+        <label for="squad1Command">Quad 1 command:</label>
+        <input type="text" class="form-control" id="squad1Command" placeholder="Turning by numbers, RIGHT TURN - ONE">
+        <label for="squad1Timings">Quad 1 timings:</label>
+        <input type="text" class="form-control" id="squad1Timings" placeholder="ONE">
+        <label for="squad1Immediately">Quad 1 'immediately' actions:</label>
+        <input type="text" class="form-control" id="squad1Immediately" placeholder="I forced my body through 90 degrees to the right...">
+        <label for="squad1PTN">Quad 1 points to note:</label>
+        <input type="text" class="form-control" id="squad1PTN" placeholder="I have returned to the correct position of attention">
+        <label for="squad1Position">Quad 1 position:<br />("Adopt the position of...")</label>
+        <input type="text" class="form-control" id="squad1Position" placeholder="Attention">
+        <label for="squad1FallIn">Quad 1 fall-in location:</label>
+        <input type="text" class="form-control" id="squad1FallIn" placeholder="Centre">
+      </div>
+    </div>
+
+    <br />
+    <button class="btn btn-primary" id="addSectionBtn">Add section</button>
+    <br />
+
+    <!-- General information about the lesson -->
+    <label for="nextLesson">Next lesson:</label>
+    <input type="text" class="form-control" id="nextlesson">
+    <button type="submit" class="btn btn-success" id="createButton">Submit</button>
+  </div>
+
+{% endblock %}
+
+"lesson":"right turn at the halt",
+"type":"foot",
+"reason":"move through 90 degrees to the right",
+"command":"Turning at the halt, RIGHT - TURN",
+"timings":"ONE - TWO, THREE - ONE",
+"squads": [
+    {"command":"",
+    "timings":"",
+    "immediately":"",
+    "points":"",
+    "position":"",
+    "fall_in":""},
+],
+"next_lesson":"left turn at the halt"

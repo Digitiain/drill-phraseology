@@ -1,62 +1,64 @@
-{% extends 'base.html' %}
-{% block body %}
+{% extends 'base.html' %} {% block body %}
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose a drill lesson<span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-header">Foot drill</li>
-                            <li><a href="#">Right turn at the halt</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <h1 class="text-center">Drill phraseology for {{ drill.lesson }}</h1>
-                    <p>Taking you a stage further in your {{ drill.type }} drill, I am now going to teach you {{ drill.lesson }}. The reason this movement is taught is to allow you as an individual or formed body of men to {{ drill.reason }} in a smart, soldier-like and uniform manner.</p>
-                    <p>On the word of the command 'STAND - EASY', relax and look this way for a full demonstration of the movement.</p>
-                    <p>STAND - EASY! Relax and look this way. </p>
-                    <p>{{ drill.command }}</p>
-                    <p>{{ drill.timings }}</p>
-                    <p>There you saw a complete demonstration of the movement. For the purpose of instruction, this movement can be broken down into parts, each part being numbered.</p>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center" id="lessonTitle">Drill phraseology for <br /><strong>{{ drill.lesson }}</strong></h1>
+      <h2>Introduction</h2>
+      <p>Taking you a stage further in your {{ drill.type }} drill, I am now going to teach you {{ drill.lesson }}. The reason this movement is taught is to allow you as an individual or formed body of men to {{ drill.reason }} in a smart, soldier-like and uniform manner.</p>
 
-                    <!-- Break it down into parts -->
-        {% for squad in drill.squads %}
+      <h2>Demonstration</h2>
+      <p>On the word of the command 'STAND - EASY', relax and look this way for a full demonstration of the movement.</p>
+      <p>STAND - EASY! Relax and look this way. </p>
+      <p>{{ drill.command }}!</p>
+      <p>{{ drill.timings }}!</p>
+      <p>There you saw a complete demonstration of the movement. For the purpose of instruction, this movement can be broken down into parts, each part being numbered.</p>
 
-                <div>
-                    <p>Continue to look this way for a demonstration of the movement to be carried out on receipt of the word of command "{{ squad.command }}".</p>
-                    <p>{{ squad.command }}</p>
-                    <p>{{ squad.timings }}</p>
-                    <p>IMMEDIATELY, on receipt of the word of command, {{ squad.immediately }}, and I FROZE in this position!</p>
-                    <p>POINTS TO NOTE: My {{ squad.points }}</p>
-                    <p>You, the squad, on execution of this movement will call out "{{ squad.timings }}!". Are there any questions?</p>
-                    <p>Adopt the position of {{ squad.position }}</p>
-                    <p>{{ squad.command }}</p>
-                    <p>As you were!</p>
-                    <p>{{ squad.command }}</p>
-                    <p>As you were!</p>
-                    <p>{{ squad.command }}</p>
-                    <p>ENSURE NOW that your {{ squad.points }}</p>
-                    <p>As I pass you, break off into pairs and practise, ensuring that one of you calls out the correct word of command.</p>
-                    <p>[Inspect the class individually, critiquing and correcting as necessary, and telling them to break off as you pass each pair.]</p>
-                    <p>[Once all of the class has broken off to practise, move between pairs (or groups if an uneven number) and critique further.]</p>
-                    <p>FALL IN {{ squad.fall_in.upper() }}!</p>
-                    <p>Adopt the position of {{ squad.position }}</p>
-                    <p>{{ squad.command }}</p>
-                    <p>As you were!</p>
-                    <p>{{ squad.command }}</p>
-                    <p>As you were!</p>
-                    <p>{{ squad.command }}</p>
-                    <p>[On the last practice, the instructor should carry out the same movement as the class in preparation for the next part of the lesson.]</p>
-                    <p>Relax and look this way. I left you in THIS position.</p>
-                </div>
+      <h2>Break it down into numbered parts</h2>
+      <!-- Break it down into parts -->
+      {% for squad in drill.squads %}
 
-        {% endfor %}
+      <div>
+        <h3 class="text-muted">Demonstration</h3>
+        <p>Continue to look this way for a demonstration of the movement to be carried out on receipt of the word of command "{{ squad.command }}".</p>
+        <p>{{ squad.command }}!</p>
+        <p>{{ squad.timings }}!</p>
+        <h3 class="text-muted">Explanation</h3>
+        <p>IMMEDIATELY, on receipt of the word of command, {{ squad.immediately }}, and I FROZE in this position!</p>
+        <p>POINTS TO NOTE: My {{ squad.points }}.</p>
+        <p>You, the squad, on execution of this movement will call out "{{ squad.timings }}!". Are there any questions?</p>
+        <h3 class="text-muted">Imitation</h3>
+        <p>Adopt the position of {{ squad.position }}.</p>
+        <p>{{ squad.command }}!</p>
+        <p>As you were!</p>
+        <p>{{ squad.command }}!</p>
+        <p>As you were!</p>
+        <p>{{ squad.command }}!</p>
+        <p>ENSURE NOW that your {{ squad.points }}.</p>
+        <p>As I pass you, break off into pairs and practise, ensuring that one of you calls out the correct word of command.</p>
+        <h3 class="text-muted">Practice</h3>
+        <p class="sideNote text-muted"><i class="fa fa-exclamation fa-2x" aria-hidden="true"></i> Inspect the class individually, critiquing and correcting as necessary, and telling them to break off as you pass each pair.</p>
+        <p class="sideNote text-muted"><i class="fa fa-exclamation fa-2x" aria-hidden="true"></i> Once all of the class has broken off to practise, move between pairs (or groups if an uneven number) and critique further.</p>
+        <p>FALL IN {{ squad.fall_in.upper() }}!</p>
+        <h3 class="text-muted">Confirmation</h3>
+        <p>Adopt the position of {{ squad.position }}.</p>
+        <p>{{ squad.command }}!</p>
+        <p>As you were!</p>
+        <p>{{ squad.command }}!</p>
+        <p>As you were!</p>
+        <p>{{ squad.command }}!</p>
+        {% if squad.squadNum != finalSquad %}
+        <p class="sideNote text-muted"><i class="fa fa-exclamation fa-2x" aria-hidden="true"></i> On the last practice, the instructor should carry out the same movement as the class in preparation for the next part of the lesson.</p>
+        <p>Relax and look this way. I left you in THIS position.</p>
+        {% else %}
+        <p>Relax and look this way.</p>
+        {% endif %}
+      </div>
 
-                    <!-- Put it together with regimental timings -->
+      {% endfor %}
 
-                    <p>Relax and look this way.</p>
+      <!-- Put it together with regimental timings -->
+
+                    <h2>Putting it together with regimental timings</h2>
                     <p>These movements are now put together into one movement with the regimental timings of {{ drill.timings }}!</p>
                     <p>Continue to look this way for a demonstration of the complete movement with regimental timings.</p>
                     <p>{{ drill.command }}</p>
@@ -70,8 +72,8 @@
                     <p>As you were!</p>
                     <p>{{ drill.command }}</p>
                     <p>As I pass you, break off into pairs and practise, ensuring that one of you calls out the correct word of command.</p>
-                    <p>[Inspect the class individually, critiquing and correcting as necessary, and telling them to break off as you pass each pair.]</p>
-                    <p>[Once all of the class has broken off to practise, move between pairs (or groups if an uneven number) and critique further.]</p>
+                    <div class="sideNote text-muted"><p><i class="fa fa-exclamation fa-2x" aria-hidden="true"></i> Inspect the class individually, critiquing and correcting as necessary, and telling them to break off as you pass each pair.</p></div>
+                    <div class="sideNote text-muted"><p><i class="fa fa-exclamation fa-2x" aria-hidden="true"></i> Once all of the class has broken off to practise, move between pairs (or groups if an uneven number) and critique further.</p></div>
                     <p>FALL IN {{ drill.fall_in }}!</p>
                     <p>Adopt the position of {{ drill.position }}</p>
                     <p>{{ drill.command }}</p>
@@ -83,10 +85,10 @@
 
                     <!-- End of lesson drills -->
 
+                    <h2>End of lesson drills</h2>
                     <p>Are there any final questions about the lesson?</p>
-                    <p>You have now learnt the {{ drill.lesson }}. Look forward to your next lesson, which is {{ drill.next_lesson }}.</p>
+                    <p>You have now learnt the {{ drill.lesson }}. Look forward to your next lesson, which is <strong>{{ drill.next_lesson }}</strong>.</p>
                 </div>
             </div>
-        </div>
 
 {% endblock %}
