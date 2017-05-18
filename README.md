@@ -9,15 +9,18 @@ The idea is that you will be able to choose a drill lesson from a drop-down menu
 - Create page (and CRUD generally) not yet funtional
 
 # requires
-python 3.5.2
-python3-virtualenv
-mongodb
-flask
-pymongo
+- python 3.5.2
+- python3-virtualenv
+- mongodb
+- flask
+- pymongo
 
 # recommended start-up procedure
 - fork/clone repo
 - create virtual environment `virtualenv -p python3 venv`
 - activate virtual environment `source venv/bin/activate`
 - install packages `pip install flask pymongo`
+- run mongo `sudo service mongod start` (ubuntu only - not sure about other OSs)
 - run server from virtual environment `python phraseology.py`
+
+# licence
