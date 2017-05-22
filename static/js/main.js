@@ -7,3 +7,7 @@ function addSquad() {
   $("#squads").append(newSquad);
   squadNumber += 1;
 }
+
+function printPage() {
+  window.print();
+}

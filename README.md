@@ -24,3 +24,4 @@ The idea is that you will be able to choose a drill lesson from a drop-down menu
 - run server from virtual environment `python phraseology.py`
 
 # licence
+GNU GPLv3+

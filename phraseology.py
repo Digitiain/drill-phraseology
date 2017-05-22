@@ -33,7 +33,7 @@ def index():
 
 @app.route('/lessons/create/')
 def create():
-    return render_template('create.html')
+    return render_template('index.html')
 
 @app.route('/lessons/<lesson>')
 def retrieve(lesson):
@@ -42,7 +42,7 @@ def retrieve(lesson):
 
 @app.route('/lessons/update/')
 def update():
-    return render_template('create.html')
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
